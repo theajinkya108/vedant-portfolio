@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "remixicon/fonts/remixicon.css";
+import './App.css';
 
-function EnhancedPortfolioLanding() {
+function App() {
   const [showContent, setShowContent] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -1169,7 +1170,7 @@ function EnhancedPortfolioLanding() {
       ></div>
 
       {/* Loading Screen */}
-      <div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-gradient-to-br from-purple-900 via-black to-blue-900">
+      <div className="svg flex items-center justify-center sticky top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-gradient-to-br from-purple-900 via-black to-blue-900">
         {/* Enhanced Floating Particles */}
         {[...Array(50)].map((_, i) => (
           <div
@@ -1234,7 +1235,7 @@ function EnhancedPortfolioLanding() {
       {showContent && (
         <div className="main w-full">
           {/* Navigation */}
-          <div className="nav-container fixed z-50 top-0 left-0 right-0 w-full px-6 lg:px-20 py-6 text-white">
+          <div className="nav-container sticky z-50 top-0 left-0 right-0 w-full px-6 lg:px-20 py-6 text-white">
             <div className="bg-black/30 backdrop-blur-xl border border-white/20 rounded-3xl px-8 py-5 flex justify-between items-center shadow-2xl">
               <div className="logo text-2xl lg:text-3xl font-bold font-['Orbitron'] gradient-text magnetic">
                 VEDANT LIKHAR
@@ -1257,11 +1258,11 @@ function EnhancedPortfolioLanding() {
                     <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>{char}</span>
                   ))}
                 </a>
-                {/* <a href="#skills" className="nav-item text-lg font-medium magnetic">
+                <a href="#skills" className="nav-item text-lg font-medium magnetic">
                   {"Skills".split("").map((char, i) => (
                     <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>{char}</span>
                   ))}
-                </a> */}
+                </a>
                 <a href="#contact" className="nav-item text-lg font-medium magnetic">
                   {"Contact".split("").map((char, i) => (
                     <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>{char}</span>
@@ -1288,11 +1289,11 @@ function EnhancedPortfolioLanding() {
             <a href="#home" className="mobile-menu-item" onClick={() => setIsMenuOpen(false)}>Home</a>
             <a href="#about" className="mobile-menu-item" onClick={() => setIsMenuOpen(false)}>About</a>
             <a href="#my-work" className="mobile-menu-item" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
-            {/* <a href="#skills" className="mobile-menu-item" onClick={() => setIsMenuOpen(false)}>Skills</a> */}
+            <a href="#skills" className="mobile-menu-item" onClick={() => setIsMenuOpen(false)}>Skills</a>
             <a href="#contact" className="mobile-menu-item" onClick={() => setIsMenuOpen(false)}>Contact</a>
           </div>
 
-          {/* Enhanced Hero Section */}
+          {/* Hero Section */}
           <section className="hero-container min-h-screen flex items-center justify-center text-white relative" ref={heroRef}>
             {/* Floating Background Elements */}
             <div className="floating-elements">
@@ -1338,7 +1339,7 @@ function EnhancedPortfolioLanding() {
                     className="border border-white/10"
                     style={{
                       animationDelay: `${i * 0.05}s`,
-                      animation: `pulse 4s ease-in-out infinite`
+                      animation: 'pulse 4s ease-in-out infinite'
                     }}
                   ></div>
                 ))}
@@ -1347,150 +1348,23 @@ function EnhancedPortfolioLanding() {
           </section>
 
           {/* About Section */}
-          <section id="about" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center text-white relative">
+          <section id="about" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center text-white relative py-32">
             <div className="text-center">
               <h2 className="text-6xl font-bold gradient-text mb-8">About Me</h2>
               <p className="text-2xl font-light opacity-80 max-w-2xl mx-auto">
-                Hey! I’m a visual storyteller who loves turning ideas into engaging content. Whether it’s editing videos, creating motion graphics, designing eye-catching visuals, or crafting content for social media. I enjoy every part of the process. I blend creativity with the purpose of making content that not only looks good but connects with people.
+                Hey! I'm a visual storyteller who loves turning ideas into engaging content. Whether it's editing videos, creating motion graphics, designing eye-catching visuals, or crafting content for social media. I enjoy every part of the process. I blend creativity with the purpose of making content that not only looks good but connects with people.
               </p>
-              <div className="mt-12">
+              {/* <div className="mt-12">
                 <div className="inline-flex items-center gap-4 px-8 py-4 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20">
                   <i className="ri-code-line text-3xl text-green-400"></i>
-                  {/* <span className="text-lg">Ready to build the next section...</span> */}
+                  <span className="text-lg">Ready to build the next section...</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </section>
 
-          {/* Skills Section
-          <section id="skills" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex flex-col items-center justify-center text-white relative py-32">
-            <div className="container mx-auto px-8 lg:px-20">
-              <div className="section-header flex flex-col items-center text-center mb-20">
-                <h2 className="text-5xl lg:text-6xl font-['Orbitron'] font-bold gradient-text mb-8">
-                  My Skills
-                </h2>
-                <p className="text-xl text-gray-400 max-w-3xl">
-                  A showcase of my technical expertise and creative capabilities
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"> */}
-          {/* Technical Skills */}
-          {/* <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 group">
-                  <div className="flex items-center gap-4 mb-6">
-                    <i className="ri-code-box-line text-4xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
-                    <h3 className="text-2xl font-bold">Technical Skills</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">HTML/CSS</span>
-                        <span className="text-cyan-400">95%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" style={{ width: '95%' }}></div>
-                      </div>
-                    </div>
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">JavaScript</span>
-                        <span className="text-cyan-400">90%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">React</span>
-                        <span className="text-cyan-400">85%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" style={{ width: '85%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-
-          {/* Design Skills */}
-          {/* <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-pink-400/50 transition-all duration-300 group">
-                  <div className="flex items-center gap-4 mb-6">
-                    <i className="ri-palette-line text-4xl text-pink-400 group-hover:scale-110 transition-transform"></i>
-                    <h3 className="text-2xl font-bold">Design Skills</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">UI/UX Design</span>
-                        <span className="text-pink-400">90%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-pink-400 to-purple-500 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">Graphic Design</span>
-                        <span className="text-pink-400">85%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-pink-400 to-purple-500 rounded-full" style={{ width: '85%' }}></div>
-                      </div>
-                    </div>
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">Motion Design</span>
-                        <span className="text-pink-400">80%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-pink-400 to-purple-500 rounded-full" style={{ width: '80%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-
-          {/* Creative Skills */}
-          {/* <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-purple-400/50 transition-all duration-300 group">
-                  <div className="flex items-center gap-4 mb-6">
-                    <i className="ri-movie-2-line text-4xl text-purple-400 group-hover:scale-110 transition-transform"></i>
-                    <h3 className="text-2xl font-bold">Creative Skills</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">Video Editing</span>
-                        <span className="text-purple-400">95%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-purple-400 to-indigo-500 rounded-full" style={{ width: '95%' }}></div>
-                      </div>
-                    </div>
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">Content Creation</span>
-                        <span className="text-purple-400">90%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-purple-400 to-indigo-500 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                    <div className="skill-item">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">Storytelling</span>
-                        <span className="text-purple-400">85%</span>
-                      </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-purple-400 to-indigo-500 rounded-full" style={{ width: '85%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> */}
-
           {/* Portfolio Section */}
-          <section id="my-work" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex flex-col items-center justify-center text-white relative py-32">
+          <section id="my-work" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center text-white relative py-32">
             <div className="container mx-auto px-8 lg:px-20">
               <div className="section-header flex flex-col items-center text-center" style={{ marginBottom: '50px', paddingTop: '80px' }}>
                 <h2 className="text-5xl lg:text-6xl font-['Orbitron'] font-bold gradient-text" style={{ marginBottom: '60px' }}>
@@ -1589,44 +1463,105 @@ function EnhancedPortfolioLanding() {
             </div>
           </section>
 
+          {/* Skills Section */}
+          <section id="skills" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center text-white relative py-32">
+            <div className="w-full max-w-6xl mx-auto">
+              <div className="section-header text-center mb-16">
+                <h2 className="text-5xl lg:text-6xl font-['Orbitron'] font-bold gradient-text mb-6">
+                  My Skills
+                </h2>
+                <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                  Expertise in industry-leading tools and softwares
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {/* Design Skills */}
+                <div className="skills-category bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-8 flex flex-col items-center">
+                  <h3 className="text-2xl font-bold text-cyan-400 mb-8 flex items-center">
+                    <i className="ri-palette-line text-3xl mr-4"></i>
+                    Design Skills
+                  </h3>
+                  <div className="w-full space-y-8">
+                    {[
+                      { name: 'Adobe Photoshop', level: 95 },
+                      { name: 'Adobe Illustrator', level: 90 },
+                      { name: 'Canva', level: 85 },
+                      { name: 'Figma', level: 80 }
+                    ].map((skill, index) => (
+                      <div key={index} className="skill-item w-full">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-lg font-semibold text-white">{skill.name}</span>
+                          <span className="text-gray-300 font-semibold">{skill.level}%</span>
+                        </div>
+                        <div className="skill-bar w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+                          <div
+                            className="skill-progress h-full bg-gradient-to-r from-pink-500 to-cyan-400 rounded-full"
+                            style={{ width: `${skill.level}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Development Skills */}
+                <div className="skills-category bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-8 flex flex-col items-center">
+                  <h3 className="text-2xl font-bold text-pink-400 mb-8 flex items-center">
+                    <i className="ri-code-s-slash-line text-3xl mr-4"></i>
+                    Video Editing Skills
+                  </h3>
+                  <div className="w-full space-y-8">
+                    {[
+                      { name: 'Davinci Resolve', level: 95 },
+                      { name: 'Adobe Premiere Pro', level: 90 },
+                      { name: 'AI Tools', level: 90 },
+                      // { name: 'Tailwind CSS', level: 85 },
+                      // { name: 'GSAP', level: 80 }
+                    ].map((skill, index) => (
+                      <div key={index} className="skill-item w-full">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-lg font-semibold text-white">{skill.name}</span>
+                          <span className="text-gray-300 font-semibold">{skill.level}%</span>
+                        </div>
+                        <div className="skill-bar w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+                          <div
+                            className="skill-progress h-full bg-gradient-to-r from-cyan-400 to-pink-500 rounded-full"
+                            style={{ width: `${skill.level}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Contact Section */}
           <section id="contact" className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center text-white relative py-32">
             <div className="container mx-auto px-8 lg:px-20 text-center">
               <h2 className="text-5xl lg:text-6xl font-['Orbitron'] font-bold gradient-text mb-12 magnetic">Get In Touch</h2>
-              {/* <p className="text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed">
-                Let's create something extraordinary together! Reach out through my socials or drop me an email.
-              </p> */}
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12">
-                <a
-                  href="https://www.instagram.com/ved_upclose?igsh=MXh2N21kdWszamtnbQ=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link flex items-center gap-4 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 hover:border-purple-400/50 hover:text-purple-400 transition-all duration-300 magnetic"
-                >
-                  <i className="ri-instagram-line text-2xl"></i>
-                  <span className="text-lg font-medium">Instagram</span>
-                </a>
-                <a
-                  href="https://in.linkedin.com/in/vedant-likhar-0919b3341?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link flex items-center gap-4 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 hover:border-blue-400/50 hover:text-blue-400 transition-all duration-300 magnetic"
-                >
-                  <i className="ri-linkedin-box-line text-2xl"></i>
-                  <span className="text-lg font-medium">LinkedIn</span>
-                </a>
-                <a
-                  href="mailto:vedantlikhar67@gmail.com"
-                  className="contact-link flex items-center gap-4 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 hover:border-green-400/50 hover:text-green-400 transition-all duration-300 magnetic"
-                >
-                  <i className="ri-mail-line text-2xl"></i>
-                  <span className="text-lg font-medium">Email</span>
-                </a>
+              <div className="max-w-2xl mx-auto">
+                <p className="text-xl opacity-80 mb-8">
+                  Have a project in mind? Let's create something amazing together!
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href="mailto:vedantlikhar67@gmail.com" className="cta-button">
+                    Email Me
+                  </a>
+                  <a href="https://www.linkedin.com/in/vedant-likhar-0919b3341/" target="_blank" rel="noopener noreferrer" className="cta-button">
+                    LinkedIn
+                  </a>
+                  <a href="https://www.instagram.com/ved_upclose?igsh=MXh2N21kdWszamtnbQ==" target="_blank" rel="noopener noreferrer" className="cta-button">
+                    Instagram
+                  </a>
+                </div>
               </div>
             </div>
           </section>
         </div>
       )}
-    </>);
+    </>
+  );
 }
-export default EnhancedPortfolioLanding;
+
+export default App;
