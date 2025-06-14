@@ -1514,7 +1514,7 @@ function App() {
                       { name: 'Davinci Resolve', level: 95 },
                       { name: 'Adobe Premiere Pro', level: 90 },
                       { name: 'AI Tools', level: 90 },
-                      // { name: 'Tailwind CSS', level: 85 },
+                      { name: 'Adobe After Effects', level: 85 },
                       // { name: 'GSAP', level: 80 }
                     ].map((skill, index) => (
                       <div key={index} className="skill-item w-full">
