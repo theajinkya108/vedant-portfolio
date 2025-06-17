@@ -301,6 +301,7 @@ function App() {
     { id: 4, title: 'Reel 4', category: 'Content Creation', type: 'video', url: 'https://res.cloudinary.com/ddtc6qfwh/video/upload/v1749365151/IFYOUA_1_ypsh89.mp4' },
     { id: 5, title: 'Reel 5', category: 'Content Creation', type: 'video', url: 'https://res.cloudinary.com/ddtc6qfwh/video/upload/v1749365157/SNOW_by_thecometuniverse_Stay_frosty_y_ll._nevershyneversorry_comet_cometshoes_cometshoesready_cometshoesindia_cizuxe.mp4' },
     { id: 6, title: 'Reel 6', category: 'Content Creation', type: 'video', url: 'https://res.cloudinary.com/ddtc6qfwh/video/upload/v1749483277/When_I_was_a_kid._seedhemaut_encoreabj_theycallmecalm_dhh_seedhemaut_hiphop_storytelling_indianculture_model_fashion_y6mcno.mp4' },
+    { id: 7, title: 'Reel 7', category: 'Content Creation', type: 'video', url: 'https://res.cloudinary.com/ddtc6qfwh/video/upload/v1750181933/__11_cfeoz5.mp4' },
     // Video Editing (3 reels)
     { id: 7, title: 'Edit 1', category: 'Video Editing', type: 'video', url: 'https://res.cloudinary.com/ddtc6qfwh/video/upload/v1749365157/_4---_1_nptcep.mp4' },
     { id: 8, title: 'Edit 2', category: 'Video Editing', type: 'video', url: 'https://res.cloudinary.com/ddtc6qfwh/video/upload/v1749365153/Sensational_snacks._Literally_foodella_foodellasnacks_trending_trendingreels_snacking_frozenpotatosnacks_frozensnackoptions_instagramtrending_1_dksfrl.mp4' },
